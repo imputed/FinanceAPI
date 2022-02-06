@@ -17,15 +17,11 @@ export default function StockTable(props) {
         >
             <TableCell align="center">{stock.name}</TableCell>
             <TableCell align="right">{Number(stock.price).toFixed(2).toString()+ " €"}</TableCell>
-            <TableCell align="right">{stock.quantity}</TableCell>
+            <TableCell align="right">{Number(stock.quantity).toFixed(2)}</TableCell>
             <TableCell align="right">{Number(stock.price * stock.quantity).toFixed(2).toString()+ " €"}</TableCell>
-        </TableRow>
-    }
+            <TableCell align="right">{stock.institute}</TableCell>
 
-    let CalculateSum = function (stock) {
-        let sum = 0;
-        props.stock.forEach(stock=> sum = sum + (stock.price * stock.quantity))
-        return sum.toFixed(2).toString()+ " €";
+        </TableRow>
     }
 
     return (
@@ -38,6 +34,8 @@ export default function StockTable(props) {
                             <TableCell align="right">Price</TableCell>
                             <TableCell align="right">Quantity</TableCell>
                             <TableCell align="right">Total</TableCell>
+                            <TableCell align="right">Institut</TableCell>
+
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -48,9 +46,6 @@ export default function StockTable(props) {
                     </TableBody>
                 </Table>
             </TableContainer>
-            <Typography component={"h1"}>
-                Sum: {CalculateSum(props.stock)}
-            </Typography>
         </>
     );
 }

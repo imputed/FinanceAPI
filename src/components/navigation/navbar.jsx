@@ -34,9 +34,6 @@ export default function Navbar(props) {
             <AppBar position="static">
                 <Toolbar>
                     <MenuItem
-                        containerElement={<Link to="/profile" />}
-                        primaryText="Profile"
-
                     />
                 </Toolbar>
             </AppBar>
